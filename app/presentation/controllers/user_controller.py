@@ -9,7 +9,7 @@ from app.domain.exceptions.auth_exceptions import (
     AccountNotFoundError,
     EmailAlreadyExistsError,
 )
-from app.application.use_cases.user_service import UserServices
+from app.application.services.user_service import UserServices
 from app.application.dtos.user_dto import DTOUpdateUserInput
 from app.presentation.schemas.user_schema import UpdateUserInput, UserOut
 

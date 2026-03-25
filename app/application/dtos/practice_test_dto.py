@@ -1,6 +1,6 @@
 from uuid import UUID
-from pydantic import BaseModel, ConfigDict
-from typing import List, TypedDict, Literal, Optional
+from pydantic import BaseModel
+from typing import List, Literal, Optional
 
 
 class DTOPracticeTestOutput(BaseModel):

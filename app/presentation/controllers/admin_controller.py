@@ -1,7 +1,7 @@
 from fastapi import status, HTTPException
 from uuid import UUID
 
-from app.application.use_cases.admin_service import AdminServices
+from app.application.services.admin_service import AdminServices
 from app.application.exceptions import UserNotAllowError, UserNotFoundError
 from app.presentation.schemas.user_schema import UserOut
 

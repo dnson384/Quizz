@@ -1,7 +1,7 @@
 from fastapi import status, HTTPException
 
 
-from app.application.use_cases.auth_service import AuthService
+from app.application.services.auth_service import AuthService
 from app.application.dtos.auth_dto import (
     DTOUserCreate,
     DTOLoginEmail,

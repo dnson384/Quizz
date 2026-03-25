@@ -3,7 +3,7 @@ from uuid import UUID
 from typing import List
 
 
-from app.application.use_cases.practice_test_service import PracticeTestService
+from app.application.services.practice_test_service import PracticeTestService
 from app.application.dtos.practice_test_dto import (
     DTOPracticeTestOutput,
     DTOResultWithPracticeTest,

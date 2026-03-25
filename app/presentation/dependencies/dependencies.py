@@ -1,12 +1,12 @@
 from fastapi import Depends, Request, HTTPException, status
 from uuid import UUID
 
-from app.application.use_cases.search_service import SearchServices
-from app.application.use_cases.auth_service import AuthService
-from app.application.use_cases.user_service import UserServices
-from app.application.use_cases.course_service import CourseService
-from app.application.use_cases.practice_test_service import PracticeTestService
-from app.application.use_cases.admin_service import AdminServices
+from app.application.services.search_service import SearchServices
+from app.application.services.auth_service import AuthService
+from app.application.services.user_service import UserServices
+from app.application.services.course_service import CourseService
+from app.application.services.practice_test_service import PracticeTestService
+from app.application.services.admin_service import AdminServices
 
 from app.presentation.controllers.search_controller import SearchController
 from app.presentation.controllers.auth_controller import AuthController

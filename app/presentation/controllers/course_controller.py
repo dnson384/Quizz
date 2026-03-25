@@ -2,7 +2,7 @@ from fastapi import status, HTTPException
 from uuid import UUID
 from typing import List
 
-from app.application.use_cases.course_service import CourseService
+from app.application.services.course_service import CourseService
 from app.application.dtos.course_dto import (
     DTONewCourseInput,
     DTONewCourseDetailInput,

@@ -1,6 +1,6 @@
 from fastapi import status, HTTPException
 
-from app.application.use_cases.search_service import SearchServices
+from app.application.services.search_service import SearchServices
 from app.presentation.schemas.search_schema import SearchInput, SearchOutput
 
 
