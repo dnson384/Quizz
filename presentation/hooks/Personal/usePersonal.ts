@@ -107,7 +107,7 @@ export default function usePersonal() {
         }
       }
     } else {
-      alert("Dữ liệu thay đổi không hợp lệ");
+      setError("Dữ liệu thay đổi không hợp lệ");
     }
   };
 
@@ -132,10 +132,7 @@ export default function usePersonal() {
       const timer = setTimeout(() => {
         setError(null);
       }, 3000);
-      return () => {
-        clearTimeout(timer);
-        window.location.reload();
-      };
+      return () => clearTimeout(timer);
     }
   }, [error]);
 

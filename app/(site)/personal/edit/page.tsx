@@ -43,7 +43,7 @@ export default function Personal() {
             <SideMenu />
             {error && (
               <div className="fixed inset-0 h-fit flex justify-center top-20">
-                <div className="fixed z-10 h-fit inset-0 flex justify-center top-15">
+                <div className="fixed z-10 h-fit inset-0 flex justify-center top-20">
                   <div className="flex items-center gap-2 bg-red-100 w-fit h-fit p-2 rounded-lg">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
