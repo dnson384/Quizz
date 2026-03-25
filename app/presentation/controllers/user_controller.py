@@ -2,8 +2,9 @@ from fastapi import status, HTTPException, UploadFile
 from uuid import UUID, uuid4
 import os
 import shutil
-import os
 from pathlib import Path
+from PIL import Image
+from io import BytesIO
 
 from app.domain.exceptions.auth_exceptions import (
     AccountNotFoundError,
@@ -20,6 +21,9 @@ AVATARS_DIR = PUBLIC_DIR / "avatars"
 
 TEMP_DIR.mkdir(parents=True, exist_ok=True)
 AVATARS_DIR.mkdir(parents=True, exist_ok=True)
+
+MAX_SIZE = (512, 512)
+QUALITY = 85
 
 
 class UserController:
@@ -43,11 +47,26 @@ class UserController:
     def upload_temp_avatar(self, file: UploadFile):
         if not file.content_type.startswith("image/"):
             raise HTTPException(status_code=400, detail="File phải là kiểu ảnh")
+
         filename = f"{uuid4()}{os.path.splitext(file.filename)[1]}"
         file_path = TEMP_DIR / filename
+
         try:
-            with open(file_path, "wb") as buffer:
-                shutil.copyfileobj(file.file, buffer)
+            image = Image.open(file.file)
+
+            if image.mode in ("RGBA", "P"):
+                image = image.convert("RGB")
+
+            image.thumbnail(MAX_SIZE)
+
+            image.save(
+                file_path,
+                format="JPEG",
+                quality=QUALITY,
+                optimize=True,
+                progressive=True,
+            )
+
             return f"/static/temp/{filename}"
         except Exception as e:
             print(f"Error: {e}")

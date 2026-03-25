@@ -57,7 +57,7 @@ class User:
         email: str,
         role: str,
         login_method: str,
-        avatar_url: str = "/public/avatar_icon/owl.jpg",
+        avatar_url: str = "/static/avatars/owl.jpg",
     ) -> "User":
         return cls(
             _user_id=uuid7(),
