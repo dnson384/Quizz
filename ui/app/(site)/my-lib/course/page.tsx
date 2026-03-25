@@ -32,7 +32,7 @@ export default function MyCourse() {
     if (changedTerm.term.length === 0) return true;
     if (changedTerm.definition.length === 0) return true;
   });
-  const isFormValid = !titleMissing && !anyMissing;
+  const isFormValid = !titleMissing || (!anyMissing && changedTerms.length > 0);
 
   return (
     <>

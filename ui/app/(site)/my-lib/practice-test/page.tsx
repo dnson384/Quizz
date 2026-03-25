@@ -48,7 +48,7 @@ export default function MyPracticeTest() {
     );
     if (!hasAnswerOption) return true;
   });
-  const isFormValid = !titleMissing && !anyMissing;
+  const isFormValid = !titleMissing || (!anyMissing && changedQuestions.length > 0);
 
   return (
     <>
